@@ -24,16 +24,65 @@ header{
 main{
     background-color: rgb(156, 192, 223);
     display: grid;
-    grid-template-rows: 100px 1fr;
-    padding: 50px 100px;
+    grid-template-rows: 150px 1fr;
 
 }
 
-main button{
-    height: 90px;
+main > button{
+    height: 70px;
     width: 150px;
     align-self: center;
     justify-self: center;
+    font-size: 26px;
+    font-weight: 500;
+    background-color: rgb(156, 192, 223);
+    border: none;
+    border-radius: 10px;
+}
+
+main > button:hover{
+    background-color: rgb(205, 205, 205);
+}
+
+.books {
+    display: flex;
+    gap: 30px;
+    padding: 0 100px;
+    flex-wrap: wrap;
+}
+
+.book {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+    font-weight: 500;
+    width: 300px;
+}
+
+.book button {
+    padding: 20px 60px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.addBook {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 250px;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.addBook input, .addBook button {
+    width: 100%;
 }
 
 footer{
