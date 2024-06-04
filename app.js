@@ -1,7 +1,10 @@
 const myLibrary = [];
 
-function Book() {
-
+function Book(title, author, numberOfPages, hasBeenRead) {
+    this.title = title;
+    this.author = author;
+    this.numberOfPages = numberOfPages;
+    this.hasBeenRead = hasBeenRead;
 }
 
 //adds book to library
