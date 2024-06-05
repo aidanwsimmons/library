@@ -79,3 +79,30 @@ document.getElementById('formOverlay').addEventListener('click', function(event)
         this.classList.remove('show');
     }
 })
+
+//function to handle form submission when trying to add a new book to the library
+function handleFormSubmit() {
+    const title = document.getElementById('title').value
+    const author = document.getElementById('author').value
+    const pages = document.getElementById('pages').value
+    const hasBeenRead = document.getElementById('hasBeenRead').checked
+
+    if(title && author && pages){
+        const newBook = new Book(title, author, parseInt(pages), hasBeenRead)
+        addBookToLibrary(newBook)
+
+        //clear form after submission
+        document.getElementById('title').value = '';
+        document.getElementById('author').value = '';
+        document.getElementById('pages').value = '';
+        document.getElementById('hasBeenRead').checked = false;
+
+        //closes overlay
+        document.getElementById('formOverlay').classList.remove('show')
+    } else {
+        alert('Please fill in all fields')
+    }
+}
+
+//handles form Submission when submit button is clicked
+document.getElementById('submitBook').addEventListener('click', handleFormSubmit)
