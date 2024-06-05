@@ -21,12 +21,12 @@ function displayLibrary() {
         bookDiv.appendChild(titleSpan)
 
         const authorSpan = document.createElement('span')
-        titleSpan.textContent = `by ${book.author}`
-        bookDiv.appendChild(titleSpan)
+        authorSpan.textContent = `by ${book.author}`
+        bookDiv.appendChild(authorSpan)
 
         const pagesSpan = document.createElement('span')
-        titleSpan.textContent = `${book.numberOfPages} pages`
-        bookDiv.appendChild(titleSpan)
+        pagesSpan.textContent = `${book.numberOfPages} pages`
+        bookDiv.appendChild(pagesSpan)
 
         const readButton = document.createElement('button')
         readButton.textContent = book.hasBeenRead ? 'Read' : 'Not Read'
