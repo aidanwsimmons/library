@@ -1,10 +1,10 @@
-const myLibrary = [];
+const myLibrary = []
 
 function Book(title, author, numberOfPages, hasBeenRead) {
-    this.title = title;
-    this.author = author;
-    this.numberOfPages = numberOfPages;
-    this.hasBeenRead = hasBeenRead;
+    this.title = title
+    this.author = author
+    this.numberOfPages = numberOfPages
+    this.hasBeenRead = hasBeenRead
 }
 
 //shows library as individual book cards
@@ -71,11 +71,11 @@ function toggleReadStatus(index) {
 //shows overlay + addBook form when addBook button is clicked
 document.querySelector('.addBookBtn').addEventListener('click', function() {
     document.getElementById('formOverlay').classList.add('show');
-});
+})
 
 //hides overlay when anywhere outside the form is clicked
 document.getElementById('formOverlay').addEventListener('click', function(event) {
     if (event.target === this) {
         this.classList.remove('show');
     }
-});
+})
