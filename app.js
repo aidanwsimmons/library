@@ -92,7 +92,32 @@ function handleFormSubmit() {
     const pages = document.getElementById('pages').value
     const hasBeenRead = document.getElementById('hasBeenRead').checked
 
-    if(title && author && pages){
+    let isValid = true
+
+    const MAX_TITLE_LENGTH = 50
+    const MAX_AUTHOR_LENGTH = 50
+    const MAX_PAGES = 100000
+
+    //validate title
+    if(title.length === 0 || title.length > MAX_TITLE_LENGTH){
+        alert(`Title must be between 1 and ${MAX_TITLE_LENGTH} characters.`)
+        isValid = false
+    }
+
+    //validate author
+    if(author.length === 0 || author.length > MAX_AUTHOR_LENGTH){
+        alert(`Author must be between 1 and ${MAX_AUTHOR_LENGTH} characters.`)
+        isValid = false
+    }
+
+    //validate pages
+    const pagesValue = parseInt(pages)
+    if(isNaN(pagesValue) || pagesValue <= 0 || pagesValue > MAX_PAGES){
+        alert(`Pages must be a number between 1 and ${MAX_PAGES}`)
+        isValid = false
+    }
+
+    if(isValid){
         const newBook = new Book(title, author, parseInt(pages), hasBeenRead)
         addBookToLibrary(newBook)
 
@@ -104,8 +129,6 @@ function handleFormSubmit() {
 
         //closes overlay
         document.getElementById('formOverlay').classList.remove('show')
-    } else {
-        alert('Please fill in all fields')
     }
 }
 
