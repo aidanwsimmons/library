@@ -70,6 +70,14 @@ main > button:hover{
     border-radius: 10px;
 }
 
+.read {
+    background-color: green;
+}
+
+.notRead {
+    background-color: red;
+}
+
 #formOverlay {
     display: none;
     position: fixed;

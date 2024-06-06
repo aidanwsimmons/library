@@ -30,6 +30,11 @@ function displayLibrary() {
 
         const readButton = document.createElement('button')
         readButton.textContent = book.hasBeenRead ? 'Read' : 'Not Read'
+        if(book.hasBeenRead){
+            readButton.classList.add('read')
+        }else{
+            readButton.classList.add('notRead')
+        }
         readButton.addEventListener('click', () => {
             toggleReadStatus(index)
         })
