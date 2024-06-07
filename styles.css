@@ -45,10 +45,10 @@ main > button:hover{
 }
 
 .library {
-    display: flex;
+    display: grid;
     gap: 30px;
     padding: 0 100px;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Initial grid setup */
     justify-content: left;
 }
 
@@ -62,42 +62,30 @@ main > button:hover{
     align-items: center;
     height: 300px;
     font-weight: 500;
-    flex: 1 1 calc(25% - 30px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; 
-    max-width: 400px; 
-    min-width: 200px; 
+    box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {
     .library {
         padding: 0 50px;
     }
-
-    .book {
-        flex: 1 1 calc(33.333% - 20px); /* Adjust flex-basis to accommodate three cards per row */
-    }
 }
 
 @media (max-width: 768px) {
     .library {
-        padding: 0 30px; /* Further reduce padding */
-    }
-
-    .book {
-        flex: 1 1 calc(50% - 20px); /* Adjust flex-basis to accommodate two cards per row */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        padding: 0 30px;
     }
 }
 
 @media (max-width: 480px) {
     .library {
-        padding: 0 10px; /* Further reduce padding */
-    }
-
-    .book {
-        flex: 1 1 calc(100% - 20px); /* Full width for very small screens */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        padding: 0 10px;
     }
 }
+
 
 .book button {
     padding: 20px 60px;
