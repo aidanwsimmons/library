@@ -41,7 +41,7 @@ main > button{
 }
 
 main > button:hover{
-    background-color: rgb(205, 205, 205);
+    background-color: rgb(255, 255, 255);
 }
 
 .library {
@@ -61,6 +61,7 @@ main > button:hover{
     justify-content: space-between;
     align-items: center;
     height: 300px;
+    font-size: 20px;
     font-weight: 500;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -91,10 +92,11 @@ main > button:hover{
     padding: 20px 60px;
     width: 100%;
     border-radius: 10px;
+    font-size: 18px;
 }
 
 button:hover {
-    filter: brightness(80%);
+    filter: brightness(90%);
 }
 
 .read {
